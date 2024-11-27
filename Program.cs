@@ -4,33 +4,21 @@
     {
         static void Main(string[] args)
         {
-            Console.Write("Introduceti dimensiunea sirului: ");
+            Console.WriteLine("Introduceti numarul de elemente din secventa: ");
             int n = int.Parse(Console.ReadLine());
-            int[] sir = new int[n];
-            int numerePare = 0;
-            Console.WriteLine($"Introduceti cele {n} elemente ale sirului: ");
-            for (int i = 0; i < n; i++)
+
+            int contorPar = 0;
+
+            Console.WriteLine($"Introduceti cele {n} elemente");
+            for( int i = 0; i < n; i++)
             {
-                bool valid = false;
-                Console.Write($"Elementul {i + 1}: ");
-                string input = Console.ReadLine();
-                if (int.TryParse(input, out int numar))
+                int numar = int.Parse(Console.ReadLine());
+                if(numar % 2 == 0)
                 {
-                    sir[i] = numar;
-                    valid = true;
-                    if(numar % 2 == 0)
-                    {
-                        numerePare++;
-                    }
-                }
-                else
-                {
-                    Console.WriteLine("Vă rog să introduceți un număr valid.");
-                }
-
-            }
-
-            Console.WriteLine($"Sirul are {numerePare} numere pare");
+                    contorPar++;
+                }    
+            } 
+            Console.WriteLine($"In secventa exista {contorPar} numere pare");
         }
     }
 }
